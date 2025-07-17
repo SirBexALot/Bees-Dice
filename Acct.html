@@ -1,0 +1,27 @@
+{{ block title }}
+   <h3>Welcome to the accounting reporting period</h3>
+<p>Please write down the total value of the dice you see rolled, <br>
+taxes will be calculated as 25% of this amount </p>
+{{ endblock }}
+{{ block content }}
+{{ if player.round_number == 1 }}
+<video width="100" height="100" controls autoplay> <source src="{{ static 'Dice4.mp4' }}" type="video/mp4"> </video>
+<video width="100" height="100" controls autoplay> <source src="{{ static 'Dice1.mp4' }}" type="video/mp4"> </video>
+<video width="100" height="100" controls autoplay> <source src="{{ static 'Dice5.mp4' }}" type="video/mp4"> </video>
+<video width="100" height="100" controls autoplay> <source src="{{ static 'Dice5.mp4' }}" type="video/mp4"> </video>
+<video width="100" height="100" controls autoplay> <source src="{{ static 'Dice4.mp4' }}" type="video/mp4"> </video>
+    {{ elif player.round_number == 2 }}
+<video width="100" height="100" controls autoplay> <source src="{{ static 'Dice3.mp4' }}" type="video/mp4"> </video>
+<video width="100" height="100" controls autoplay> <source src="{{ static 'Dice2.mp4' }}" type="video/mp4"> </video>
+<video width="100" height="100" controls autoplay> <source src="{{ static 'Dice2.mp4' }}" type="video/mp4"> </video>
+<video width="100" height="100" controls autoplay> <source src="{{ static 'Dice3.mp4' }}" type="video/mp4"> </video>
+<video width="100" height="100" controls autoplay> <source src="{{ static 'Dice5.mp4' }}" type="video/mp4"> </video>
+
+    {{ else }}
+    {{ pass }}
+    {{ endif }}
+
+    {{ formfields }}
+    {{ next_button }}
+
+{{ endblock }}
