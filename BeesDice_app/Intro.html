@@ -1,0 +1,28 @@
+{{ block title }}
+   <h3>Welcome to the experiment</h3>
+<p> please play the video to move forward to the next page.</p>
+<audio controls> <source src="{{ static 'OtreeTest.m4a' }}"></audio>
+<script>
+   const audio = document.querySelector('audio');
+   audio.addEventListener('ended', (event) => {
+      const button = document.getElementById("Next");
+      button.style.visibility = "visible";
+   });
+</script>
+<p>In this experiment, you will be reporting your financial and accounting income.<br>
+You will roll digital dice to determine the value of the incomes.<br>
+You need to report the total amount of your dice rolls.<br>
+The rolls are in a random order, but can be traced back to you using an audit/SEC check. <br>
+After rolling for your financial income, students selected to be part of the SEC have the option of verifying your income. <br>
+They have limited ability to check and most will not be. <br>
+Your accounting income will be a separate roll because of things like deferred taxes <br>
+When you report your accounting income, there is a 10% chance of getting audited.<br>
+If your financial income is not the same as the dice rolls during an SEC check, it may trigger an audit (10% chance) <br>
+If your accounting income is not the same as the dice rolls during an audit, the SEC will be informed and can choose to check</p>
+
+{{ endblock }}
+{{ block content }}
+<button class="otree-btn-next5 btn btn-primary" id="Next" style="visibility: hidden;">Next</button>
+{{ formfields }}
+
+{{ endblock }}
