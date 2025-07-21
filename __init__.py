@@ -16,8 +16,8 @@ class Subsession(BaseSubsession):
     pass
 
 class Group(BaseGroup):
-    highest_payoff = models.CurrencyField()
-
+    pass
+    
 class Player(BasePlayer):
     bus_name = models.StringField(label="Your Business name:")
     fin_roll_one = models.CurrencyField(label='What is the value of the first dice?', min=1, max=6)
